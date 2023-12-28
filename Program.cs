@@ -3,6 +3,8 @@ using System.Linq;
 
 namespace CsharpAdvanced_6
 {
+
+    //Class Client
     internal class Client
     {
         public int id;
