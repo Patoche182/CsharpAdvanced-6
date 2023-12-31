@@ -18,6 +18,7 @@ namespace CsharpAdvanced_6
             budget = b;
             mail = m;
         }
+
         public override string ToString()
         {
             return $"{id} {nom} {mail} {budget}"; // Chaine Formatée
@@ -38,8 +39,8 @@ namespace CsharpAdvanced_6
 
         static void Main(string[] args)
         {
-            var clientQuery = from client in clients 
-                              where client.budget > 15000 
+            var clientQuery = from client in clients
+                              where client.budget > 15000
                               select new
                               {
                                   Nom = client.nom,
@@ -47,18 +48,19 @@ namespace CsharpAdvanced_6
                               };
 
             var clientLambdaQuery = clients.Where(client => client.budget > 15000);
-
-            foreach (Client c in clientLambdaQuery) 
+            Console.WriteLine("----------");
+            foreach (Client c in clientLambdaQuery)
             {
                 Console.WriteLine(c);
             }
-
+            Console.WriteLine("----------");
             Console.WriteLine("----------");
 
-            foreach (var c in clientQuery) 
+            foreach (var c in clientQuery)
             {
                 Console.WriteLine(c);
             }
+            Console.WriteLine("----------");
         }
     }
 }
