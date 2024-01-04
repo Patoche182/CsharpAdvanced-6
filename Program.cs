@@ -43,7 +43,7 @@ namespace CsharpAdvanced_6
                                where client.budget > 10000
                                orderby client.nom descending
                                select client;
-            var queryClientDesc = clients.Where(client => client.budget > 10000).OrderByDescending(client => client.id);
+            var queryClientDesc = clients.Where(client => client.budget > 10000).OrderByDescending(client => client.id); // Ajout de la QueryClient mais ça marche bof
 
             var clientQuery = from client in clients
                               where client.budget > 15000
