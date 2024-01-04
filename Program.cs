@@ -34,11 +34,17 @@ namespace CsharpAdvanced_6
             new Client(3, "Anthony", 20000, "anthony@mail.fr"),
             new Client(4, "Michel", 100500, "michel@mail.fr"),
             new Client(5, "Jean", 15000, "jean@mail.fr"),
-            new Client(5, "Zoe", 50000, "zoe@mail.fr"),
+            new Client(6, "Zoe", 50000, "zoe@mail.fr"),
         };
 
         static void Main(string[] args)
         {
+            var queryClients = from client in clients
+                               where client.budget > 10000
+                               orderby client.nom descending
+                               select client;
+            var queryClientDesc = clients.Where(client => client.budget > 10000).OrderByDescending(client => client.id);
+
             var clientQuery = from client in clients
                               where client.budget > 15000
                               select new
@@ -56,7 +62,7 @@ namespace CsharpAdvanced_6
             Console.WriteLine("----------");
             Console.WriteLine("----------");
 
-            foreach (var c in clientQuery)
+            foreach (var c in queryClientDesc)
             {
                 Console.WriteLine(c);
             }
