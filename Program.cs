@@ -35,6 +35,7 @@ namespace CsharpAdvanced_6
             new Client(4, "Michel", 100500, "michel@mail.fr"),
             new Client(5, "Jean", 15000, "jean@mail.fr"),
             new Client(6, "Zoe", 50000, "zoe@mail.fr"),
+            new Client(7, "Filler", 50000, "filler@mail.fr"),
         };
 
         static void Main(string[] args)
